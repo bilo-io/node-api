@@ -33,5 +33,9 @@
     "openurl": "^1.1.1",
     "os": "^0.1.1",
     "signale": "^1.4.0"
+  },
+  "dependencies": {
+    "@sentry/node": "^5.23.0",
+    "@sentry/tracing": "^5.23.0"
   }
 }
