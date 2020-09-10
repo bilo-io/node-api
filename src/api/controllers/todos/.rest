@@ -1,0 +1,20 @@
+GET http://localhost:4000/api/todos
+###
+POST http://localhost:4000/api/slides/slideshows
+Content-Type: application/json
+
+{
+    "name": "Sample Course",
+    "description": "Testing from REST Client in VSCode",
+    "difficulty": "easy",
+    "thumbnail": "https://www.mockrabbit.com/wp-content/uploads/2018/12/Become-a-Full-Stack-Developers.jpg"
+}
+### /:id
+PATCH http://localhost:4000/api/slides/slideshows/5f34a97bf9c629d1e60092e1
+Content-Type: application/json
+
+{
+    "name": "Title updated yet again"
+}
+### /:id
+DELETE http://localhost:4000/api/slides/slideshows/5f34997c517272bba23b64ee

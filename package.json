@@ -1,0 +1,37 @@
+{
+  "name": "node-api",
+  "version": "1.0.0",
+  "description": "A Node.JS, Express and Mongo based API",
+  "main": "index.js",
+  "scripts": {
+    "commit": "node ./scripts/commit.js",
+    "branch": "node ./scripts/branch.js",
+    "release": "node ./scripts/release.js",
+    "start": "nodemon ./server.js",
+    "serve": "NODE_ENV=development nodemon ./server.js withCluster & yarn serve:browser",
+    "serve:workers": "NODE_ENV=development nodemon withCluster ./server.js",
+    "serve:browser": "node ./launch.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bilo Lwabona",
+  "license": "MIT",
+  "devDependencies": {
+    "boxen": "^4.2.0",
+    "chalk": "^4.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.6.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "express": "^4.17.1",
+    "inquirer": "^7.3.3",
+    "mongoose": "^5.9.28",
+    "nodemon": "^2.0.4",
+    "openurl": "^1.1.1",
+    "os": "^0.1.1",
+    "signale": "^1.4.0"
+  }
+}

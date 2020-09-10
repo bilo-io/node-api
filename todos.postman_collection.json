@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "50df90a8-ec5f-440a-9b33-8ad5d4edfde0",
+		"name": "Github",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Todos",
+			"item": [
+				{
+					"name": "Fetch Todos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "aaeaa400-5cc1-43ce-a269-bd6ae432f665",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"",
+									"    const data = pm.response.json() || [];",
+									"    tests[\"Count: (\" + data.length + \") is larger than 0\"] = data && data.length > 0;",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{nodeApiUrl}}/todos",
+							"host": [
+								"{{nodeApiUrl}}"
+							],
+							"path": [
+								"todos"
+							]
+						},
+						"description": "Fetches all `TODO` items from the `node-api`"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Todo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0b3149c2-4b87-40a4-bbcd-50a5f8532ce8",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"    ",
+									"    const data = pm.response.json();",
+									"    pm.environment.set(\"todoID\", data._id);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"POSTMAN_TEST_NewTodoItem\",\n    \"description\": \"POSTMAN_TEST_Description of TodoItem for testing purposes. Please Ignore\",\n    \"status\": \"todo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{nodeApiUrl}}/todos",
+							"host": [
+								"{{nodeApiUrl}}"
+							],
+							"path": [
+								"todos"
+							]
+						},
+						"description": "Fetches all `TODO` items from the `node-api`"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Todo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c47fdad6-fe3f-43cb-abe9-b242b0d958e6",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"POSTMAN_TEST: UpdatedTodoItem\",\n    \"description\": \"POSTMAN_TEST: UPDATE Description of TodoItem for testing purposes. Please Ignore\",\n    \"status\": \"todo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{nodeApiUrl}}/todos/{{todoID}}",
+							"host": [
+								"{{nodeApiUrl}}"
+							],
+							"path": [
+								"todos",
+								"{{todoID}}"
+							]
+						},
+						"description": "Fetches all `TODO` items from the `node-api`"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Todo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ebd50c1a-672d-40d2-9e45-a30778d1d03f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"POSTMAN_TEST_NewTodoItem\",\n    \"description\": \"POSTMAN_TEST_Description of TodoItem for testing purposes. Please Ignore\",\n    \"status\": \"todo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{nodeApiUrl}}/todos/{{todoID}}",
+							"host": [
+								"{{nodeApiUrl}}"
+							],
+							"path": [
+								"todos",
+								"{{todoID}}"
+							]
+						},
+						"description": "Fetches all `TODO` items from the `node-api`"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
