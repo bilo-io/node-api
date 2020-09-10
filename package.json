@@ -11,7 +11,7 @@
     "serve": "NODE_ENV=development nodemon ./server.js withCluster & yarn serve:browser",
     "serve:workers": "NODE_ENV=development nodemon withCluster ./server.js",
     "serve:browser": "node ./launch.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "author": "Bilo Lwabona",
   "license": "MIT",
