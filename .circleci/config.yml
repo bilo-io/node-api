@@ -7,19 +7,19 @@ jobs:
       - image: circleci/node@3.0.0
     steps:
       - checkout
-      - run: my-build-commands
+      - run: npm run build
   test:
     docker:
       - image: circleci/node@3.0.0
     steps:
       - checkout
-      - run: my-test-commands
+      - run: npm run test
   deploy:
     docker:
       - image: circleci/node@3.0.0
     steps:
       - checkout
-      - run: my-deploy-commands
+      - run: echo "deploy script not defined"
 
 # Orchestrate our job run sequence
 workflows:
