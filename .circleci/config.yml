@@ -12,7 +12,7 @@ jobs:
       - run: echo "this is the build job"
   test:
     docker:
-      - image: circleci/<language>:<version TAG>
+      - image: circleci/node@3.0.0
     steps:
       - checkout
       - run: echo "this is the test job"
