@@ -1,6 +1,14 @@
-- name: Postman / Newman
-- uses: actions/checkout@master
-- uses: matt-ball/newman-action@master
-  with:
-    collection: todos.postman_collection.json
-    environment: todos.postman_environment.json
+name: Postman
+
+on: [pull_request, push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Postman via Newman
+    - uses: actions/checkout@master
+    - uses: matt-ball/newman-action@master
+      with:
+        collection: postman_collection.json
+        environment: postman_environment.json
