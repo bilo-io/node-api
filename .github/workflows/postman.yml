@@ -6,7 +6,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - name: Postman via Newman
     - uses: actions/checkout@master
     - uses: matt-ball/newman-action@master
       with:
