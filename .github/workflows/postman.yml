@@ -1,0 +1,6 @@
+- name: Postman / Newman
+- uses: actions/checkout@master
+- uses: matt-ball/newman-action@master
+  with:
+    collection: todos.postman_collection.json
+    environment: todos.postman_environment.json
