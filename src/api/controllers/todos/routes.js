@@ -25,6 +25,10 @@ const routes = {
     update: {
         method: 'PATCH',
         path: `${endpointRoot}/:id`
+    },
+    replace: {
+        method: 'PUT',
+        path: `${endpointRoot}/:id`
     }
 }
 

@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A Node.JS, Express and Mongo based API",
   "main": "index.js",
+  "engines": {
+    "node": "10.x"
+  },
   "scripts": {
     "commit": "node ./scripts/commit.js",
     "branch": "node ./scripts/branch.js",

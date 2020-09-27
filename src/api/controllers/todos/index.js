@@ -42,6 +42,17 @@ module.exports = {
             }
         })
 
+        // PUT
+        app.put(routes.replace.path, validations, async (req, res) => {
+            const id = req.params.id
+            try {
+                const updated = await TodoService.update(id, req.body)
+                res.status(200).send({ id, updated })
+            } catch (err) {
+                res.status(200).send({ error: err, message: `Failed to update Todo with ID ${id}` })
+            }
+        })
+
         // DELETE
         app.delete(routes.delete.path, validations, async (req, res) => {
             const id = req.params.id
