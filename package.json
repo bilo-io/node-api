@@ -38,7 +38,7 @@
     "signale": "^1.4.0"
   },
   "dependencies": {
-    "@sentry/node": "^5.23.0",
+    "@sentry/node": "^6.2.1",
     "@sentry/tracing": "^5.23.0"
   }
 }
