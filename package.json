@@ -31,7 +31,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "express": "^4.17.1",
     "inquirer": "^7.3.3",
-    "mongoose": "^5.10.4",
+    "mongoose": "^5.12.5",
     "nodemon": "^2.0.4",
     "openurl": "^1.1.1",
     "os": "^0.1.1",
